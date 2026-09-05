@@ -1,0 +1,330 @@
+/* ===================================================== */
+/* ===================  BASE / LAYOUT  ================== */
+/* ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+section {
+  padding: 48px 32px;
+  border-bottom: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px;
+  }
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Separador decorativo entre secciones (si lo usas en App.tsx) */
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+/* ===================================================== */
+/* ========================  HERO  ======================= */
+/* ===================================================== */
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  padding: 64px 32px;
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    color: var(--text-h);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 40px 20px;
+  }
+}
+
+#hero-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  margin-bottom: 8px;
+
+  @media (max-width: 1024px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ===================================================== */
+/* ========================  ABOUT  ====================== */
+/* ===================================================== */
+
+#about {
+  max-width: 800px;
+  margin: 0 auto;
+
+  p {
+    color: var(--text-h);
+    margin-bottom: 12px;
+  }
+}
+
+/* ===================================================== */
+/* ======================  PROJECTS  ===================== */
+/* ===================================================== */
+
+#projects {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#projects-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.project-item {
+  background: var(--social-bg);
+  border-radius: 6px;
+  padding: 20px;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: var(--text-h);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 4px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================== */
+/* =======================  SKILLS  ======================= */
+/* ===================================================== */
+
+#skills {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.skill-item {
+  background: var(--social-bg);
+  color: var(--text-h);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  #skills-list {
+    justify-content: center;
+  }
+}
+
+/* ===================================================== */
+/* ======================  EDUCATION  ===================== */
+/* ===================================================== */
+
+#education {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#education-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 16px;
+
+  li {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: var(--text-h);
+      font-size: 14px;
+    }
+  }
+}
+
+/* ===================================================== */
+/* =======================  HOBBIES  ======================= */
+/* ===================================================== */
+
+#hobbies {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#hobbies-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+
+  li {
+    background: var(--social-bg);
+    color: var(--text-h);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #hobbies-list {
+    justify-content: center;
+  }
+}
+
+/* ===================================================== */
+/* ====================  CONTACT FORM  ==================== */
+/* ===================================================== */
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  label {
+    font-size: 14px;
+    color: var(--text-h);
+  }
+
+  input,
+  textarea {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--social-bg);
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  button[type="submit"] {
+    align-self: flex-start;
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: var(--accent-border);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+}
