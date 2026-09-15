@@ -1,0 +1,4 @@
+<div class='container'>
+    <app-left-panel [titles]='titles' [selected]='selected' (selectedTitle)='onSelect($event)'></app-left-panel>
+    <app-right-panel [title]='selected' (clear)='onClear()'></app-right-panel>
+</div>
