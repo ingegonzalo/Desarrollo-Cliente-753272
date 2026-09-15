@@ -1,0 +1,8 @@
+<div *ngIf="title; else unSelected">
+  <h3>{{ title }}</h3>
+  <button (click)="onClickClear()">Clear</button>
+</div>
+
+<ng-template #unSelected>
+  <p>Select a Title</p>
+</ng-template>

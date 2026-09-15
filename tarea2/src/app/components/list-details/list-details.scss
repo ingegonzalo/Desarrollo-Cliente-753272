@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 20px;
+
+    app-left-panel,
+    app-right-panel {
+        flex: 1;
+    }
+}
