@@ -1,0 +1,12 @@
+<h2>Mis favoritas</h2>
+<ng-container *ngIf="favorites$ | async as favs">
+  <p *ngIf="favs.length === 0">Aún no tienes películas favoritas.</p>
+  <div class="grid">
+    <app-movie-card
+      *ngFor="let movie of favs"
+      [movie]="movie"
+      [isFavorite]="true"
+      (favoriteToggled)="favoritesService.remove($event.id)">
+    </app-movie-card>
+  </div>
+</ng-container>

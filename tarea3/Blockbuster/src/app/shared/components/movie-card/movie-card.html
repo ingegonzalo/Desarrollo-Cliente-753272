@@ -1,0 +1,17 @@
+<div class="card" [ngClass]="{ fav: isFavorite }">
+  <a [routerLink]="['/movies', movie.id]">
+    <img [src]="movie.poster" [alt]="movie.title" />
+  </a>
+  <div class="info">
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.genre }} · {{ movie.year }}</p>
+    <p class="dir">Dir. {{ movie.director }}</p>
+    <p class="prod">Prod. {{ movie.producer }}</p>
+    <div class="actions">
+      <a [routerLink]="['/movies', movie.id]">Ver detalle</a>
+      <button (click)="favoriteToggled.emit(movie)">
+        {{ isFavorite ? '★ Quitar' : '☆ Favorita' }}
+      </button>
+    </div>
+  </div>
+</div>
