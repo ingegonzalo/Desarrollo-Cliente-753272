@@ -1,0 +1,8 @@
+<form [formGroup]="form" class="filters">
+  <input formControlName="title" placeholder="Título" />
+  <input formControlName="director" placeholder="Director" />
+  <input formControlName="producer" placeholder="Productor" />
+  <input formControlName="genre" placeholder="Género" />
+  <input formControlName="year" placeholder="Año" />
+  <button type="button" (click)="form.reset({ title: '', director: '', producer: '', genre: '', year: '' })">Limpiar</button>
+</form>

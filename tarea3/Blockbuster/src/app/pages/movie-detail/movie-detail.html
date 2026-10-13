@@ -1,0 +1,23 @@
+<a routerLink="/">← Volver</a>
+
+<ng-container *ngIf="movie; else notFound">
+  <div class="detail">
+    <img [src]="movie.poster" [alt]="movie.title" />
+    <div>
+      <h2>{{ movie.title }} ({{ movie.year }})</h2>
+      <p><strong>Director:</strong> {{ movie.director }}</p>
+      <p><strong>Productor:</strong> {{ movie.producer }}</p>
+      <p><strong>Género:</strong> {{ movie.genre }}</p>
+      <p>{{ movie.description }}</p>
+
+      <button *ngIf="isFavorite$ | async; else add" (click)="favorites.remove(movie.id)">
+        ★ Quitar de favoritos
+      </button>
+      <ng-template #add>
+        <button (click)="favorites.add(movie)">☆ Agregar a favoritos</button>
+      </ng-template>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #notFound><p>La película no existe.</p></ng-template>

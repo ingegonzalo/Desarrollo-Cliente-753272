@@ -1,0 +1,21 @@
+.detail {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+
+  img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  button {
+    cursor: pointer;
+    border: 0;
+    background: #3f51b5;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 4px;
+  }
+}

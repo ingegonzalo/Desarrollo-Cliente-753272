@@ -1,0 +1,12 @@
+<nav>
+  <strong>🎬 BlockBuster</strong>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+  @if (((favorites.favorites$ | async)?.length ?? 0) > 0) {
+    <a routerLink="/favorites" routerLinkActive="active">
+      Favoritas ({{ (favorites.favorites$ | async)?.length }})
+    </a>
+  } @else {
+    <a routerLink="/favorites" routerLinkActive="active">Favoritas</a>
+}
+</nav>
+<main><router-outlet></router-outlet></main>

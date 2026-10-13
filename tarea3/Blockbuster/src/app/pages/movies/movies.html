@@ -1,0 +1,13 @@
+<h2>Peliculas</h2>
+<app-movie-filter (filtersChange)="applyFilters($event)"></app-movie-filter>
+
+<p *ngIf="filtered.length === 0">No se encontraron películas.</p>
+
+<div class="grid" *ngIf="favorites$ | async as favs">
+  <app-movie-card
+    *ngFor="let movie of filtered"
+    [movie]="movie"
+    [isFavorite]="isFav(movie.id, favs)"
+    (favoriteToggled)="favoritesService.toggle($event)">
+  </app-movie-card>
+</div>
